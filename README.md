@@ -1,5 +1,9 @@
 # KoHs Anchor's Bridge
 
+<p align="center">
+  <img src="icon.png" alt="KoHs Anchor's Bridge icon" width="220">
+</p>
+
 [![GitHub](https://img.shields.io/badge/GitHub-Source-6f2cff?style=for-the-badge&logo=github)](https://github.com/kerlycanelita/KoHs-Anchors-Bridge)
 [![Issues](https://img.shields.io/badge/Report-Issues-a855f7?style=for-the-badge&logo=githubissues)](https://github.com/kerlycanelita/KoHs-Anchors-Bridge/issues)
 [![Discord](https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/9t2VxEF7UU)
