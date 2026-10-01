@@ -1,0 +1,10 @@
+{
+  "id": "kohs-anchors-bridge",
+  "name": "KoHs Anchor's Bridge",
+  "version": "${version}",
+  "description": "The network limits of KoHs Anchor's Bridge; the bridge itself runs on each backend server.",
+  "url": "https://github.com/kerlycanelita/KoHs-Anchors-Bridge",
+  "authors": ["Zymekoh"],
+  "dependencies": [],
+  "main": "dev.zymekoh.kohsanchors.bridge.velocity.VelocityBridge"
+}

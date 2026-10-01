@@ -1,0 +1,21 @@
+name: KoHsAnchorsBridge
+version: '${version}'
+main: dev.zymekoh.kohsanchors.bridge.bukkit.BukkitBridge
+api-version: '1.21'
+folia-supported: true
+authors: [Zymekoh]
+description: "The server side of KoHs Anchor's: lets the mod's Anchors Server options work where the admin allows them."
+website: https://github.com/kerlycanelita/KoHs-Anchors-Bridge
+softdepend: [GrimAC]
+commands:
+  kohsbridge:
+    description: "KoHs Anchor's Bridge: status, or reload its config."
+    usage: "/kohsbridge [status|reload]"
+    permission: kohsanchors.bridge.admin
+permissions:
+  kohsanchors.bridge.admin:
+    description: "Use /kohsbridge."
+    default: op
+  kohsanchors.bridge.chain:
+    description: "May use the anchor chain where config.yml allows it."
+    default: true

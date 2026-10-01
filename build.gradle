@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+}
+
+group = 'dev.zymekoh'
+version = '1.0.0'
+
+base {
+	archivesName = 'kohs-anchors-bridge'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		name = 'PaperMC'
+		url = 'https://repo.papermc.io/repository/maven-public/'
+	}
+}
+
+// One jar for every platform: each server loads only its own entry point (plugin.yml for
+// Bukkit, Spigot, Paper, Purpur and Folia; velocity-plugin.json for Velocity; bungee.yml for
+// BungeeCord and Waterfall), and never touches the others' classes. Compiled against the oldest
+// APIs it supports, Java 21, so the same jar runs from Minecraft 1.21.11 to 26.3.
+dependencies {
+	compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
+	compileOnly 'com.velocitypowered:velocity-api:3.4.0'
+	compileOnly 'net.md-5:bungeecord-api:1.21-R0.4'
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 21
+	options.encoding = 'UTF-8'
+}
+
+processResources {
+	inputs.property 'version', project.version
+	filesMatching(['plugin.yml', 'bungee.yml', 'velocity-plugin.json']) {
+		expand 'version': project.version
+	}
+}
+
+jar {
+	from('LICENSE') {
+		rename { 'LICENSE_kohs_anchors_bridge' }
+	}
+}

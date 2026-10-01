@@ -1,0 +1,5 @@
+name: KoHsAnchorsBridge
+version: '${version}'
+main: dev.zymekoh.kohsanchors.bridge.bungee.BungeeBridge
+author: Zymekoh
+description: "The network limits of KoHs Anchor's Bridge; the bridge itself runs on each backend server."

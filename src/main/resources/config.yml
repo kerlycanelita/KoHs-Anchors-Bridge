@@ -1,0 +1,30 @@
+# KoHs Anchor's Bridge
+#
+# What this server lets KoHs Anchor's do. Players without the mod see no difference, and the
+# bridge never changes a block, an item, an attack or a movement: the server keeps deciding all.
+# After editing: /kohsbridge reload
+
+anchor-chain:
+  # The anchor chain changes WHEN clicks reach the server, so it is off until you allow it.
+  # With it allowed, players who switch it on in the mod can use:
+  enabled: false
+  #   the no-wait chain: clicks on an exploding anchor go out without waiting for its removal;
+  fast-chain: true
+  #   the instant detonation click: a detonation is sent the moment it is pressed.
+  instant-detonation: true
+  # With Grim installed, tell it (through its API) that the chain is allowed here: a flag of the
+  # checks below is let through, only for players using the chain, only within the window after
+  # they acted on a respawn anchor. Every other check and every other moment stay Grim's.
+  grim-cooperation: true
+  grim-window-ms: 300
+  grim-checks:
+    - AirLiquidPlace
+    - PacketOrderE
+    - MultiPlace
+
+# Better glow enemy anchors: tell players who placed each respawn anchor, so theirs never show as
+# an enemy's. It only says "yours" or "someone else's", never who.
+better-enemy-glow: true
+
+# Real latency: answer the mod's once-a-second ping, for its connection-dependent waits.
+real-latency: true
